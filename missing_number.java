@@ -1,4 +1,4 @@
-// WAP to find the missing number is a array.
+// WAP to find the missing number in an array.
 // Program is written by Nirbhay Kaushik
 
 class missing_number
