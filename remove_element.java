@@ -4,7 +4,7 @@
 // Program is written by Nirbhay Kaushik
 
 /* For C/Java Hindi Tutorials, you can visit 
-http://youtube.com/techfully */
+http://youtube.com/techfully  */
 
 import java.util.Scanner;
 public class remove_element {
