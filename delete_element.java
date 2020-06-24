@@ -1,51 +1,56 @@
-// Java program to delete an element in an array
+/* WAP to delete an element in an array.
+    This program is written by Nirbhay Kaushik.
+    http://www.youtube.com/techfully  */
 
 import java.util.Scanner;
 public class delete_element
 {
-    public static void main(String[] args)
-    {
-        int n, x, flag = 1, loc = 0;
-        Scanner s = new Scanner(System.in);
-        System.out.print(“Enter teh number of elements : “);
-        n = s.nextInt();
-        int a[] = new int[n];
-        System.out.println(“Input the array elements : “);
-        for (int i = 0; i < n; i++)
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.print("How many elements, do you want : ");
+        // Variable declaration
+        int flag=0,loc=0,len=sc.nextInt();
+        int[] arr=new int[len];
+
+        // Getting input from the user
+        System.out.print("Enter the elements : \n");
+        for(int i=0;i<len;i++)
         {
-            a[i] = s.nextInt();
+            arr[i]=sc.nextInt();
         }
-        System.out.print(“Enter the element you want to delete:”);
-        x = s.nextInt();
-        for (int i = 0; i < n; i++)
+
+        // Getting delete element from the user
+        System.out.print("Which element, do you want to delete : ");
+        int del_ele=sc.nextInt();
+
+        // get the location of the element
+        for(int i=0;i<len;i++)
         {
-            if(a[i] == x)
+            if(arr[i]==del_ele)
             {
-                flag =1;
-                loc = i;
-                break;
-            }
-            else
-            {
-                flag = 0;
+                flag=1;
+                loc=i;
             }
         }
-        if(flag == 1)
+
+        // logic for left shift of the elements
+        if(flag==1)
         {
-            for(int i = loc+1; i < n; i++)
+            for(int i=loc+1;i<len;i++)
             {
-                a[i-1] = a[i];
+                arr[i-1]=arr[i];
             }
-            System.out.print(“After Deleting:”);
-            for (int i = 0; i < n-2; i++)
+            System.out.print("After Deleting :\n");
+            for(int i=0;i<len-2;i++)
             {
-                System.out.print(a[i]+”,”);
+                System.out.print(arr[i]+",");
             }
-            System.out.print(a[n-2]);
+            arr[len-1]=0;
+            System.out.print(arr[len-2]);
         }
         else
         {
-            System.out.println(“Element not found”);
+            System.out.print("Delete operation is not possible !");
         }
     }
 }
